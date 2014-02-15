@@ -5,11 +5,14 @@
  */
 
 package soundloop.View;
-
+import javax.swing.*;
 /**
  *
  * @author Bryan Schreckengost
  */
 public class ButtonLayout {
-    
+    private JPanel panel = new JPanel();
+    public void run() {
+        
+    }
 }
