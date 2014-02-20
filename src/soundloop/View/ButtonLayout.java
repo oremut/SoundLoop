@@ -4,17 +4,14 @@
  * and open the template in the editor.
  */
 
-package soundloop.View;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.event.ActionEvent;
 import javax.swing.*;
 /**
  *
  * @author Bryan Schreckengost
  */
 public class ButtonLayout extends JPanel{
-	public ButtonLayout() {
-		this.setBackground(Color.black);
-	}
+   
+	public static void main(String[] args) {
+         System.out.println("a");   
+        }
 }

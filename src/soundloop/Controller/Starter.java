@@ -1,12 +1,13 @@
 package soundloop.Controller;
 import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.Toolkit;
-import soundloop.View.ButtonLayout;
 import javax.swing.*;
 
 public class Starter {
 
     public static void main(String[] args) {
+        GridLayout layout = new GridLayout(4,2);
         ButtonLayout p = new ButtonLayout();
         Toolkit tk = Toolkit.getDefaultToolkit();  
         int xSize = ((int) tk.getScreenSize().getWidth());  
@@ -18,7 +19,8 @@ public class Starter {
 	frame.pack();
         frame.setSize(xSize,ySize);  
         frame.add(button);
-	frame.setVisible(true);
+	frame.setVisible(true); 
 	frame.setBackground(Color.black); 
+        frame.setLayout(layout);
     }
 }
