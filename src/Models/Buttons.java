@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Models;
+import kuusisto.tinysound.Sound;
 /**
  *
  * @author Bryan Schreckengost
