@@ -1,4 +1,5 @@
 package soundloop.Controller;
+import Models.Button;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -17,12 +18,12 @@ public class Starter {
         JButton[][] button = new JButton[d][d];
         JFrame frame = new JFrame();
         frame.setResizable(false);
-        JButton buttons[] = new JButton[5];
-            buttons[0] = new JButton("tone 1");
-            buttons[1] = new JButton("tone 2");
-            buttons[2] = new JButton("tone 3");
-            buttons[3] = new JButton("Save");
-            buttons[4] = new JButton("Load");
+        Button buttons[] = new Button[5];
+            buttons[0] = new Button("tone 13");
+            buttons[1] = new Button("tone 2");
+            buttons[2] = new Button("tone 3");
+            buttons[3] = new Button("Save");
+            buttons[4] = new Button("Load");
             for(int i = 0; i < 5; i++) {
                 frame.add(buttons[i],i);
         }
