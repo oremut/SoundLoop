@@ -12,7 +12,10 @@ import javax.swing.*;
  * @author Bryan Schreckengost
  */
 public class ButtonLayout extends JPanel{
+   
 	public ButtonLayout() {
-            
+          this.setBackground(Color.black);
+          this.setSize(945,1025);
 	}
+        
 }
