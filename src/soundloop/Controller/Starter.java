@@ -39,7 +39,6 @@ public class Starter {
         }
             int nothaY = 47;
             for(int i = 0; i < 6; i++) {
-                buttons[i].setForeground(Color.white);
                 frame.add(buttons[i], i);
                 buttons[i].setLocation(nothaY, 20);
                 nothaY += 153;
