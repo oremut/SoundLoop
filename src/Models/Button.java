@@ -10,6 +10,7 @@ public class Button extends JButton {
     public Button(String text) {
     super.setText(text);
     super.setSize(80, 80);
+    super.setForeground(Color.white);
     super.setBackground(Color.DARK_GRAY);
     
 }
