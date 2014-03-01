@@ -1,13 +1,13 @@
 
-package Models;
+package soundloop.Models;
 import java.awt.Color;
 import javax.swing.JButton;
 import soundloop.Controller.Starter;
 
-public class Button extends JButton {
+public class SoundButton extends JButton {
     private boolean[][] buttonPressed = new boolean[10][10];
     
-    public Button(String text) {
+    public SoundButton(String text) {
     super.setText(text);
     super.setSize(80, 80);
     super.setForeground(Color.white);
@@ -19,9 +19,9 @@ public class Button extends JButton {
         buttonPressed[a][b] = val;
     }
     
-    public boolean getPressed() {
-        return Starter.sendPressed();
-    }
+//    public boolean getPressed() {
+//        return Starter.sendPressed();
+//    }
     
 }
     
