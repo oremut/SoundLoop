@@ -45,4 +45,13 @@ public class Board extends JPanel {
         this.setSize(945, 1025);
         this.setVisible(true);
     }
+    
+    //Tell this method the column number we want all the buttons from
+    //and it will return an array with all the SoundButtons from that column
+    public SoundButton[] getButtonsInColumn(int columnNumber) {
+        SoundButton columnSoundButtons[] = new SoundButton[10];
+        //put code here to go through the 2d array and get all the buttons
+        //from one column. Put them in columnSoundButtons[] and return it.
+        return columnSoundButtons;
+    }
 }
