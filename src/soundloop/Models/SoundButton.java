@@ -6,10 +6,9 @@ import soundloop.Controller.Starter;
 
 public class SoundButton extends JButton {
     private boolean[][] buttonPressed = new boolean[10][10];
-    
     public SoundButton(String text) {
     super.setText(text);
-    super.setSize(80, 80);
+    super.setSize(70, 70);
     super.setForeground(Color.white);
     super.setBackground(Color.DARK_GRAY);
     

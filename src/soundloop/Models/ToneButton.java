@@ -15,4 +15,8 @@ public ToneButton(String label) {
     super.setForeground(Color.white);
     super.setBackground(Color.DARK_GRAY);
 }
+
+public void changeColor(){
+    super.setBackground(Color.YELLOW);
+}
 }
