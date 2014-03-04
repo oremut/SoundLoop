@@ -18,7 +18,10 @@ public class SoundButton extends JButton {
     super.setBackground(Color.DARK_GRAY);
     
     this.isActivated = false;
-    setTinySound("this");
+    TinySound.init();
+    
+    Sound bs = TinySound.loadSound("a.wav");
+    this.buttonSound = bs;
     
 }
     
@@ -30,7 +33,8 @@ public class SoundButton extends JButton {
     //as a Sound object
     public void setTinySound(String soundName) {
         TinySound.init();
-        buttonSound = TinySound.loadSound("a.wav");        
+        Sound bs = TinySound.loadSound(soundName);
+        this.buttonSound = bs;        
     }
     
   

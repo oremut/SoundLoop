@@ -23,21 +23,23 @@ public class SoundTest {
         frame.getContentPane().add(board);
         frame.setVisible(true);
         
-//        SoundButton buttons[] = new SoundButton[10];
-//        buttons = board.getButtonsInColumn(1);
-//        
-//        buttons[1].setActive();
-//        buttons[5].setActive();
-//        
-//        SoundController sc = new SoundController();
-//        
-//        sc.playActiveSounds(buttons);
+        SoundButton buttons[] = new SoundButton[10];
+        buttons = board.getButtonsInColumn(1);
         
-        TinySound.init();
-        SoundButton sb = new SoundButton("title");
+        buttons[1].setActive();
+        buttons[5].setActive();
         
-        Sound buttonSound = sb.getTinySound();
-        buttonSound.play();
+        //buttons[5].setTinySound("b.wav");
+        
+        SoundController sc = new SoundController();
+        
+        sc.playActiveSounds(buttons);
+        
+//        TinySound.init();
+//        SoundButton sb = new SoundButton("title");
+//        
+//        Sound buttonSound = sb.getTinySound();
+//        buttonSound.play();
         
         
     }
