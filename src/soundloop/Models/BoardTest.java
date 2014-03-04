@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class Board extends JPanel implements ActionListener {
+public class BoardTest extends JPanel implements ActionListener {
 
     private int curX;
     private int curY;
@@ -24,7 +24,7 @@ public class Board extends JPanel implements ActionListener {
     private SoundButton[][] button = new SoundButton[numOfButtons][numOfButtons];
     private JButton buttons[] = new JButton[6];
 
-    public Board() {
+    public BoardTest() {
         buttons[0] = new ToneButton("tone 1");
         buttons[1] = new ToneButton("tone 2");
         buttons[2] = new ToneButton("tone 3");

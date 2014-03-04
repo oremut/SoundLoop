@@ -40,6 +40,17 @@ public class SoundButton extends JButton {
         return this.isActivated;
     }
     
+    public void setActive() {
+        this.isActivated = this.isActivated ? false : true;
+            
+        
+        if (this.isActivated == true) {
+        this.setBackground(Color.LIGHT_GRAY);
+        } else {
+            this.setBackground(Color.DARK_GRAY);
+        }
+    }
+    
 //    public boolean getPressed() {
 //        return Starter.sendPressed();
 //    }
