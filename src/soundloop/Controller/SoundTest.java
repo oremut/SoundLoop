@@ -31,9 +31,9 @@ public class SoundTest {
         buttons[7].setActive();
         buttons[8].setActive();
         
-        buttons[5].setTinySound("sound2.wav");
-        buttons[7].setTinySound("sound5.wav");
-        buttons[8].setTinySound("sound7.wav");
+//        buttons[5].setTinySound("sound2.wav");
+//        buttons[7].setTinySound("sound5.wav");
+//        buttons[8].setTinySound("sound7.wav");
         
         //buttons[5].setTinySound("b.wav");
         

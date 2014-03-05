@@ -35,7 +35,8 @@ public class Board extends JPanel implements ActionListener {
 
         for (int i = 0; i < numOfButtons; i++) {
             for (int o = 0; o < numOfButtons; o++) {
-                button[i][o] = new SoundButton("");
+                button[i][o] = new SoundButton("i" + i + " o"+ o);
+                button[i][o].setTinySound("sound"+(i+1)+".wav");
                 button[i][o].addActionListener(this);
                 this.add(button[i][o]);
                 button[i][o].setLocation(xvalue, yvalue);

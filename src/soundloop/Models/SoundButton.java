@@ -57,6 +57,7 @@ public class SoundButton extends JButton {
         
         if (this.isActivated == true) {
         this.setBackground(Color.LIGHT_GRAY);
+        this.buttonSound.play();
         } else {
             this.setBackground(Color.DARK_GRAY);
         }
