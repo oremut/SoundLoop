@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package soundloop.Controller;
 
 import javax.swing.JFrame;
@@ -12,60 +8,55 @@ import soundloop.Models.SoundButton;
 
 public class SoundTest {
 
-    public static void main(String args[]) {
-        final int DELAY = 250;
-        JFrame frame = new JFrame();
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setSize(945, 1030);
-        frame.setLayout(null);
-        Board board = new Board();
-        frame.getContentPane().add(board);
-        frame.setVisible(true);
+public static void main(String args[]) {
 
-        SoundButton buttons[] = new SoundButton[10];
-        buttons = board.getButtonsInColumn(1);
+JFrame frame = new JFrame();
+frame.setResizable(false);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+frame.pack();
+frame.setSize(945, 1030);
+frame.setLayout(null);
+Board board = new Board();
+frame.getContentPane().add(board);
+frame.setVisible(true);
 
-//        buttons[1].setActive();
-//        buttons[5].setActive();
-//        buttons[7].setActive();
-//        buttons[8].setActive();
+SoundButton buttons[] = new SoundButton[10];
+buttons = board.getButtonsInColumn(1);
 
-//        buttons[5].setTinySound("sound2.wav");
-//        buttons[7].setTinySound("sound5.wav");
-//        buttons[8].setTinySound("sound7.wav");
+// buttons[1].setActive();
+// buttons[5].setActive();
+// buttons[7].setActive();
+// buttons[8].setActive();
 
-        //buttons[5].setTinySound("b.wav");
+// buttons[5].setTinySound("sound2.wav");
+// buttons[7].setTinySound("sound5.wav");
+// buttons[8].setTinySound("sound7.wav");
 
-        SoundController sc = new SoundController(board, DELAY);
+//buttons[5].setTinySound("b.wav");
 
-        while (true) {
-            try {
-                Thread.sleep(DELAY);
-                sc.playActiveSounds();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                // handle the exception...        
-                // For example consider calling Thread.currentThread().interrupt(); here.
-            }
-        }
+SoundController sc = new SoundController(board);
+
+while (true) {
+
+sc.playActiveSounds();
+
+}
 
 
-////        SoundButton mybutton = new SoundButton("fds");
-////        mybutton.setTinySound("s.wav");
-////        mybutton.playSound();
+//// SoundButton mybutton = new SoundButton("fds");
+//// mybutton.setTinySound("s.wav");
+//// mybutton.playSound();
 
 
 
 
 
-//        TinySound.init();
-//        SoundButton sb = new SoundButton("title");
-//        
-//        Sound buttonSound = sb.getTinySound();
-//        buttonSound.play();
+// TinySound.init();
+// SoundButton sb = new SoundButton("title");
+// 
+// Sound buttonSound = sb.getTinySound();
+// buttonSound.play();
 
 
-    }
+}
 }
