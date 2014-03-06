@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import soundloop.Models.Board;
 
 public class SoundController {
-
+    private int delay;
     private Board board;
     private int currentColumnNumber = 0;
 
-    public SoundController(Board board) {
+    public SoundController(Board board, int delay) {
         this.board = board;
+        this.delay = delay;
     }
 
 //This method takes in an array of SoundButtons, it loops through them and 
@@ -42,9 +43,28 @@ public class SoundController {
         for (int i = 0; i < buttonSounds.size(); i++) {
             buttonSounds.get(i).play();
         }
+        
+        setColumnButtonColors(sb, true);
+        
+         try {
+                Thread.sleep(this.delay);
+                setColumnButtonColors(sb, false);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                // handle the exception...        
+                // For example consider calling Thread.currentThread().interrupt(); here.
+            }
+        
         this.currentColumnNumber++;
         if (this.currentColumnNumber > 9) {
             this.currentColumnNumber = 0;
+        }
+    }
+    
+    private void setColumnButtonColors(SoundButton[] sb, boolean isActive) {
+        for (int i = 0; i < sb.length; i++) {
+            sb[i].buttonIsInActiveColumn(isActive);
+           
         }
     }
     

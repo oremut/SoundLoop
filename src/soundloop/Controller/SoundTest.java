@@ -13,6 +13,7 @@ import soundloop.Models.SoundButton;
 public class SoundTest {
 
     public static void main(String args[]) {
+        final int DELAY = 250;
         JFrame frame = new JFrame();
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,19 +38,19 @@ public class SoundTest {
 
         //buttons[5].setTinySound("b.wav");
 
-        SoundController sc = new SoundController(board);
+        SoundController sc = new SoundController(board, DELAY);
 
-        while(true){
-        try {
-            Thread.sleep(250);
-            sc.playActiveSounds();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            // handle the exception...        
-            // For example consider calling Thread.currentThread().interrupt(); here.
+        while (true) {
+            try {
+                Thread.sleep(DELAY);
+                sc.playActiveSounds();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                // handle the exception...        
+                // For example consider calling Thread.currentThread().interrupt(); here.
+            }
         }
-        }
-        
+
 
 ////        SoundButton mybutton = new SoundButton("fds");
 ////        mybutton.setTinySound("s.wav");

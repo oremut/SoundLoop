@@ -22,7 +22,7 @@ public class Board extends JPanel implements ActionListener {
     ToneButton t;
     ActionListener e;
     private SoundButton[][] button = new SoundButton[numOfButtons][numOfButtons];
-    private JButton buttons[] = new JButton[6];
+    private JButton buttons[] = new JButton[7];
 
     public Board() {
         buttons[0] = new ToneButton("tone 1");
@@ -31,11 +31,12 @@ public class Board extends JPanel implements ActionListener {
         buttons[3] = new SaveButton("Save");
         buttons[4] = new LoadButton("Load");
         buttons[5] = new PlayButton("Pause");
+        buttons[6] = new PlayButton("Clear");
         this.setLayout(null);
 
         for (int i = 0; i < numOfButtons; i++) {
             for (int o = 0; o < numOfButtons; o++) {
-                button[i][o] = new SoundButton("i" + i + " o"+ o);
+                button[i][o] = new SoundButton("");
                 button[i][o].setTinySound("sound"+(i+1)+".wav");
                 button[i][o].addActionListener(this);
                 this.add(button[i][o]);
@@ -45,11 +46,12 @@ public class Board extends JPanel implements ActionListener {
             xvalue = 40;
             yvalue += 88;
         }
-        int nothaY = 47;
-        for (int i = 0; i < 6; i++) {
+        int nothaY = 24;
+        for (int i = 0; i < 7; i++) {
             this.add(buttons[i], i);
+            buttons[i].addActionListener(this);
             buttons[i].setLocation(nothaY, 20);
-            nothaY += 153;
+            nothaY += 136;
         }
         this.setBackground(Color.black);
         this.setSize(945, 1025);
@@ -74,6 +76,9 @@ public class Board extends JPanel implements ActionListener {
             for (int j = 0; j < numOfButtons; j++) {
                 if (e.getSource() == button[i][j]) {
                     button[i][j].setActive();
+                }
+                if (e.getSource() == buttons[6]) {
+                    button[i][j].setActive(false);
                 }
             }
         }
