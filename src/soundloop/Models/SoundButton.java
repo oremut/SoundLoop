@@ -15,10 +15,10 @@ public class SoundButton extends JButton {
     private Sound buttonSound;
     private boolean[][] buttonPressed = new boolean[10][10];
 
-    public SoundButton(String text) {
+    public SoundButton(String text, int width, int height) {
 
         super.setText(text);
-        super.setSize(70, 70);
+        super.setSize(width, height);
         super.setForeground(Color.white);
         super.setBackground(Color.DARK_GRAY);
 

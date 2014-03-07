@@ -55,7 +55,7 @@ e.printStackTrace();
 }
 
 this.currentColumnNumber++;
-if (this.currentColumnNumber > 9) {
+if (this.currentColumnNumber > this.board.getNumOfColumns()-1) {
 this.currentColumnNumber = 0;
 }
 }
