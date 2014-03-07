@@ -19,18 +19,17 @@ public class BoardTest extends JPanel implements ActionListener {
     private int b = 0;
     private int xvalue = 40;
     private int yvalue = 120;
-    ToneButton t;
     ActionListener e;
     private SoundButton[][] button = new SoundButton[numOfButtons][numOfButtons];
     private JButton buttons[] = new JButton[6];
 
     public BoardTest() {
-        buttons[0] = new ToneButton("tone 1");
-        buttons[1] = new ToneButton("tone 2");
-        buttons[2] = new ToneButton("tone 3");
-        buttons[3] = new SaveButton("Save");
-        buttons[4] = new LoadButton("Load");
-        buttons[5] = new PlayButton("Pause");
+        buttons[0] = new ControllButton("tone 1");
+        buttons[1] = new ControllButton("tone 2");
+        buttons[2] = new ControllButton("tone 3");
+        buttons[3] = new ControllButton("Save");
+        buttons[4] = new ControllButton("Load");
+        buttons[5] = new ControllButton("Pause");
         this.setLayout(null);
 
         for (int i = 0; i < numOfButtons; i++) {

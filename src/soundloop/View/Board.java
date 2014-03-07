@@ -1,10 +1,14 @@
-package soundloop.Models;
+package soundloop.View;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import soundloop.Models.ControllButton;
+import soundloop.Models.ControllButton;
+import soundloop.Models.SoundButton;
+import soundloop.Models.SoundButton;
 
 public class Board extends JPanel implements ActionListener {
     
@@ -24,7 +28,6 @@ public class Board extends JPanel implements ActionListener {
     private int tempo = 250;
 
     private boolean paused = false;
-    ToneButton t;
     ActionListener e;
     private SoundButton[][] button = new SoundButton[numOfRows][numOfColumns];
     private JButton buttons[] = new JButton[7];
@@ -32,13 +35,13 @@ public class Board extends JPanel implements ActionListener {
     public Board() {
         this.boardWidth = (numOfColumns * buttonWidth) + (numOfColumns * buttonSpacing) + 10;
         this.boardHeight = (numOfRows * buttonHeight) + (numOfRows * buttonSpacing) + 150;
-        buttons[0] = new ToneButton("tone 1");
-        buttons[1] = new ToneButton("tone 2");
-        buttons[2] = new ToneButton("tone 3");
-        buttons[3] = new SaveButton("Save");
-        buttons[4] = new LoadButton("Load");
-        buttons[5] = new PlayButton("Pause");
-        buttons[6] = new PlayButton("Clear");
+        buttons[0] = new ControllButton("tone 1");
+        buttons[1] = new ControllButton("tone 2");
+        buttons[2] = new ControllButton("tone 3");
+        buttons[3] = new ControllButton("Save");
+        buttons[4] = new ControllButton("Load");
+        buttons[5] = new ControllButton("Pause");
+        buttons[6] = new ControllButton("Clear");
         this.setLayout(null);
 
         for (int i = 0; i < numOfRows; i++) {

@@ -3,7 +3,7 @@ package soundloop.Controller;
 import kuusisto.tinysound.Sound;
 import soundloop.Models.SoundButton;
 import java.util.ArrayList;
-import soundloop.Models.Board;
+import soundloop.View.Board;
 
 public class SoundController {
 

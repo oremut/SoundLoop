@@ -9,7 +9,7 @@ public class SoundButton extends JButton {
 
     private Color notActive = Color.DARK_GRAY;
     private Color isActive = Color.WHITE;
-    private Color notActiveInActiveColumn = Color.CYAN;
+    private Color notActiveInActiveColumn = Color.WHITE;
     private Color isActiveInActiveColumn = Color.LIGHT_GRAY;
     private boolean isActivated;
     private Sound buttonSound;
