@@ -42,7 +42,12 @@ public class SoundButton extends JButton {
     //pass in the file name of the sound for this button, and set it up
     //as a Sound object
     public void setTinySound(String soundName) {
-        TinySound.init();
+        
+        Sound bs = TinySound.loadSound(soundName);
+        this.buttonSound = bs;
+    }
+    public void setNewTinySound(String soundName) {
+        this.buttonSound = null;
         Sound bs = TinySound.loadSound(soundName);
         this.buttonSound = bs;
     }
