@@ -12,8 +12,9 @@ public class Board extends JPanel implements ActionListener {
 
     private int numOfRows = 10;
     private int numOfColumns = 20;
-    private int buttonWidth = 35;
-    private int buttonHeight = 35;
+    private int buttonWidth = 40;
+    private int buttonHeight = 40;
+    private int controlButtonWidth = 124;
     private int buttonSpacing = 5;
     private int boardWidth;
     private int boardHeight;
@@ -22,7 +23,7 @@ public class Board extends JPanel implements ActionListener {
     private int a = 0;
     private int b = 0;
     private int xvalue = buttonSpacing;
-    private int yvalue = 120;
+    private int yvalue = 40;
     private int tempo = 250;
     private int currentTone = 0;
     private boolean paused = false;
@@ -33,13 +34,13 @@ public class Board extends JPanel implements ActionListener {
 
     public Board() {
         this.boardWidth = (numOfColumns * buttonWidth) + (numOfColumns * buttonSpacing) + 10;
-        this.boardHeight = (numOfRows * buttonHeight) + (numOfRows * buttonSpacing) + 150;
+        this.boardHeight = (numOfRows * buttonHeight) + (numOfRows * buttonSpacing)+68;
         this.soundName = "sound";
-        buttons[0] = new ControllButton("tone 1");
-        buttons[1] = new ControllButton("tone 2");
-        buttons[2] = new ControllButton("tone 3");
-        buttons[3] = new ControllButton("--");
-        buttons[4] = new ControllButton("+");
+        buttons[0] = new ControllButton("Sounds 1");
+        buttons[1] = new ControllButton("Sounds 2");
+        buttons[2] = new ControllButton("Sounds 3");
+        buttons[3] = new ControllButton("Tempo -");
+        buttons[4] = new ControllButton("Tempo +");
         buttons[5] = new ControllButton("Pause");
         buttons[6] = new ControllButton("Clear");
         this.setLayout(null);
@@ -56,12 +57,12 @@ public class Board extends JPanel implements ActionListener {
             xvalue = this.buttonSpacing;
             yvalue += this.buttonHeight + this.buttonSpacing;
         }
-        int nothaY = 24;
+        int nothaY = 3;
         for (int i = 0; i < 7; i++) {
             this.add(buttons[i], i);
             buttons[i].addActionListener(this);
-            buttons[i].setLocation(nothaY, 20);
-            nothaY += this.buttonSpacing + 90;
+            buttons[i].setLocation(nothaY, 5);
+            nothaY += this.buttonSpacing + this.controlButtonWidth;
         }
         this.setBackground(Color.black);
         this.setSize(this.boardWidth, this.boardHeight);

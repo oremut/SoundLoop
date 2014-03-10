@@ -25,7 +25,7 @@ public class SoundButton extends JButton{
         this.isActivated = false;
         TinySound.init();
 
-        //temporary loading of a sound file, this will be erased later
+        //temporary loading of a sound file, this will be erased later  
         Sound bs = TinySound.loadSound("sound1.wav");
         this.buttonSound = bs;
 
