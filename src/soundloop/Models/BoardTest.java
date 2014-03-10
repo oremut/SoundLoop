@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class BoardTest extends JPanel implements ActionListener {
-
+    
     private int curX;
     private int curY;
     private int numOfButtons = 10;
@@ -22,6 +22,7 @@ public class BoardTest extends JPanel implements ActionListener {
     ActionListener e;
     private SoundButton[][] button = new SoundButton[numOfButtons][numOfButtons];
     private JButton buttons[] = new JButton[6];
+    
 
     public BoardTest() {
         buttons[0] = new ControllButton("tone 1");

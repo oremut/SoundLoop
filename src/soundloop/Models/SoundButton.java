@@ -5,7 +5,7 @@ import javax.swing.JButton;
 import kuusisto.tinysound.Sound;
 import kuusisto.tinysound.TinySound;
 
-public class SoundButton extends JButton {
+public class SoundButton extends JButton{
 
     private Color notActive = Color.DARK_GRAY;
     private Color isActive = Color.WHITE;

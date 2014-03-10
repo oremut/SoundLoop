@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import soundloop.Models.ControllButton;
-import soundloop.Models.ControllButton;
-import soundloop.Models.SoundButton;
 import soundloop.Models.SoundButton;
 
 public class Board extends JPanel implements ActionListener {
@@ -26,6 +24,7 @@ public class Board extends JPanel implements ActionListener {
     private int xvalue = buttonSpacing;
     private int yvalue = 120;
     private int tempo = 250;
+    private int currentTone = 0;
     private boolean paused = false;
     private String soundName;
     ActionListener e;
@@ -69,12 +68,10 @@ public class Board extends JPanel implements ActionListener {
         this.setVisible(true);
     }
 
-    
-     public void setTempoDown() {
-        if(tempo < 1000 && tempo >= 125){
-            tempo+=125;
-        }
-        else if(tempo < 125){
+    public void setTempoDown() {
+        if (tempo < 1000 && tempo >= 125) {
+            tempo += 125;
+        } else if (tempo < 125) {
             tempo += 25;
         }
     }
@@ -150,36 +147,47 @@ public class Board extends JPanel implements ActionListener {
 
         //Button listener to set the tone pack back to default (tone button 1)
         if (e.getSource() == buttons[0]) {
-            soundName = "sound";
-            xvalue = buttonSpacing;
-            for (int p = 0; p < numOfRows; p++) {
-                for (int o = 0; o < numOfColumns; o++) {
-                    this.button[p][o].setNewTinySound("sound" + (p + 1) + ".wav");
+            if (this.currentTone != 0) {
+                soundName = "sound";
+                xvalue = buttonSpacing;
+                for (int p = 0; p < numOfRows; p++) {
+                    for (int o = 0; o < numOfColumns; o++) {
+                        this.button[p][o].setNewTinySound("sound" + (p + 1) + ".wav");
 
+                    }
                 }
+                this.currentTone = 0;
             }
         }
 
         //Button listener to set the tone pack to "beeps" (tone button 2
+
         if (e.getSource() == buttons[1]) {
-            soundName = "beep";
-            for (int p = 0; p < numOfRows; p++) {
-                for (int o = 0; o < numOfColumns; o++) {
-                    System.out.println("this is p: " + p + "\t this is o: " + o);
-                    this.button[p][o].setNewTinySound(soundName + (p + 1) + ".wav");
+            if (this.currentTone != 1) {
+                soundName = "beep";
+                for (int p = 0; p < numOfRows; p++) {
+                    for (int o = 0; o < numOfColumns; o++) {
+                        System.out.println("this is p: " + p + "\t this is o: " + o);
+                        this.button[p][o].setNewTinySound(soundName + (p + 1) + ".wav");
+                    }
                 }
+                this.currentTone = 1;
             }
         }
-        
+
         //Button listener to set the tone pack to "beats" (tone button 3
+
         if (e.getSource() == buttons[2]) {
-            soundName = "beat";
-            for (int p = 0; p < numOfRows; p++) {
-                for (int o = 0; o < numOfColumns; o++) {
-                    System.out.println("this is p: " + p + "\t this is o: " + o);
-                    this.button[p][o].setNewTinySound(soundName + (p + 1) + ".wav");
+            if (this.currentTone != 2) {
+                soundName = "beat";
+                for (int p = 0; p < numOfRows; p++) {
+                    for (int o = 0; o < numOfColumns; o++) {
+                        System.out.println("this is p: " + p + "\t this is o: " + o);
+                        this.button[p][o].setNewTinySound(soundName + (p + 1) + ".wav");
+                    }
                 }
             }
+            this.currentTone = 2;
         }
     }
 
