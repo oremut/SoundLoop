@@ -5,7 +5,7 @@ import javax.swing.JButton;
 import kuusisto.tinysound.Sound;
 import kuusisto.tinysound.TinySound;
 
-public class SoundButton extends JButton{
+public class SoundButton extends JButton {
 
     private Color notActive = Color.DARK_GRAY;
     private Color isActive = Color.WHITE;
@@ -42,10 +42,11 @@ public class SoundButton extends JButton{
     //pass in the file name of the sound for this button, and set it up
     //as a Sound object
     public void setTinySound(String soundName) {
-        
+
         Sound bs = TinySound.loadSound(soundName);
         this.buttonSound = bs;
     }
+
     public void setNewTinySound(String soundName) {
         this.buttonSound = null;
         Sound bs = TinySound.loadSound(soundName);
@@ -72,7 +73,7 @@ public class SoundButton extends JButton{
             this.setBackground(notActive);
         }
     }
-    
+
     public void setActive(boolean active) {
         this.isActivated = false;
         if (this.isActivated == true) {

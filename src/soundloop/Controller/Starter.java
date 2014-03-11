@@ -9,7 +9,7 @@ public class Starter {
     public static void main(String args[]) {
 
         JFrame frame = new JFrame();
-        Board board = new Board();                
+        Board board = new Board();
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -25,10 +25,7 @@ public class Starter {
         SoundController sc = new SoundController(board);
 
         while (true) {
-
             sc.playActiveSounds();
-
         }
-
-    }    
+    }
 }
