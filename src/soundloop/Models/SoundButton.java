@@ -15,8 +15,14 @@ public class SoundButton extends JButton {
     private Sound buttonSound;
     private boolean[][] buttonPressed = new boolean[10][10];
 
+    /**
+     * Set the buttons that play sound to the correct attributes
+     *
+     * @param text current text the buttons will be set to.
+     * @param width how wide the button will be
+     * @param height how tall the button will be
+     */
     public SoundButton(String text, int width, int height) {
-
         super.setText(text);
         super.setSize(width, height);
         super.setForeground(Color.white);
@@ -24,29 +30,31 @@ public class SoundButton extends JButton {
 
         this.isActivated = false;
         TinySound.init();
-
-        //temporary loading of a sound file, this will be erased later  
-        Sound bs = TinySound.loadSound("sound1.wav");
-        this.buttonSound = bs;
-
     }
 
+    /**
+     * This plays the sound that was located on the button
+     */
     public void playSound() {
         this.buttonSound.play();
     }
 
-    private void setButton(boolean val, int a, int b) {
-        buttonPressed[a][b] = val;
-    }
-
-    //pass in the file name of the sound for this button, and set it up
-    //as a Sound object
+    /**
+     * Sets the Sound object for the SoundButton
+     *
+     * @param soundName The url of the sound file to be used
+     */
     public void setTinySound(String soundName) {
 
         Sound bs = TinySound.loadSound(soundName);
         this.buttonSound = bs;
     }
 
+    /**
+     * this sets the soundName to the url of a sound in tinySound
+     *
+     * @param soundName The string that will turn into a location for a sound
+     */
     public void setNewTinySound(String soundName) {
         this.buttonSound = null;
         Sound bs = TinySound.loadSound(soundName);
@@ -58,10 +66,16 @@ public class SoundButton extends JButton {
         return this.buttonSound;
     }
 
+    /**
+     * @return whether the button is active or not
+     */
     public boolean isActivated() {
         return this.isActivated;
     }
 
+    /**
+     * Sets the button to white or dark_gray whether it is active or not.
+     */
     public void setActive() {
         this.isActivated = this.isActivated ? false : true;
 
@@ -74,16 +88,27 @@ public class SoundButton extends JButton {
         }
     }
 
+    /**
+     * This method is an alternate method to change the background back to
+     * dark_gray from the clearing button.
+     *
+     * @param active Boolean - Set the button to active or not active
+     */
     public void setActive(boolean active) {
         this.isActivated = false;
         if (this.isActivated == true) {
             this.setBackground(isActive);
-            //this.buttonSound.play();
         } else {
             this.setBackground(notActive);
         }
     }
 
+    /**
+     * Determines whether the button is active and whether to keep the color
+     * when the time bar passes by it.
+     *
+     * @param isInActiveColumn Buttons that are active in the column
+     */
     public void buttonIsInActiveColumn(boolean isInActiveColumn) {
         if (isInActiveColumn) {
             if (isActivated) {
@@ -99,7 +124,4 @@ public class SoundButton extends JButton {
             }
         }
     }
-//    public boolean getPressed() {
-//        return Starter.sendPressed();
-//    }
 }

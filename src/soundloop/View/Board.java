@@ -32,6 +32,9 @@ public class Board extends JPanel implements ActionListener {
     private SoundButton[][] button = new SoundButton[NUM_OF_ROWS][NUM_OF_COLUMNS];
     private JButton buttons[] = new JButton[7];
 
+    /**
+     * Adds the buttons in an alignment that fits the number of sounds.
+     */
     public Board() {
         this.boardWidth = (NUM_OF_COLUMNS * BUTTON_WIDTH) + (NUM_OF_COLUMNS * BUTTON_SPACING) + 10;
         this.boardHeight = (NUM_OF_ROWS * BUTTON_HEIGHT) + (NUM_OF_ROWS * BUTTON_SPACING) + 68;
@@ -69,6 +72,9 @@ public class Board extends JPanel implements ActionListener {
         this.setVisible(true);
     }
 
+    /**
+     * Reduces the speed or tempo.
+     */
     public void setTempoDown() {
         if (tempo < 1000 && tempo >= 125) {
             tempo += 125;
@@ -78,7 +84,7 @@ public class Board extends JPanel implements ActionListener {
     }
 
     /**
-     * This is the method to increase the tempo.
+     * Increases the tempo.
      */
     public void setTempoUp() {
         if (tempo > 125) {
@@ -92,8 +98,11 @@ public class Board extends JPanel implements ActionListener {
         return tempo;
     }
 
-//Tell this method the column number we want all the buttons from
-//and it will return an array with all the SoundButtons from that column
+    /**
+     *
+     * @param columnNumber The current column that the iterator is on.
+     * @return The buttons that are in the column.
+     */
     public SoundButton[] getButtonsInColumn(int columnNumber) {
         SoundButton columnSoundButtons[] = new SoundButton[10];
         for (int i = 0; i < NUM_OF_ROWS; i++) {
@@ -116,6 +125,11 @@ public class Board extends JPanel implements ActionListener {
         return this.NUM_OF_COLUMNS;
     }
 
+    /**
+     * Find which button is pressed, and what to do after.
+     *
+     * @param e The ActionEvent object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         boolean pauseWasChanged = false;
@@ -195,6 +209,11 @@ public class Board extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Pauses or unpauses the iterator
+     *
+     * @param currentState Whether the pause button is pressed or not.
+     */
     public void setPaused(boolean currentState) {
         if (currentState) {
             paused = false;
@@ -206,10 +225,18 @@ public class Board extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Sets the boolean paused to false
+     */
     public void unpaused() {
         paused = false;
     }
 
+    /**
+     * Determine the current pause state of the iterator
+     *
+     * @return True or false depending on if the board is paused or not.
+     */
     public boolean getPaused() {
         return paused;
 
