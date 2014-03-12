@@ -185,7 +185,6 @@ public class Board extends JPanel implements ActionListener {
                 soundName = "beep";
                 for (int p = 0; p < NUM_OF_ROWS; p++) {
                     for (int o = 0; o < NUM_OF_COLUMNS; o++) {
-                        System.out.println("this is p: " + p + "\t this is o: " + o);
                         this.button[p][o].setNewTinySound(soundName + (p + 1) + ".wav");
                     }
                 }
@@ -200,7 +199,6 @@ public class Board extends JPanel implements ActionListener {
                 soundName = "beat";
                 for (int p = 0; p < NUM_OF_ROWS; p++) {
                     for (int o = 0; o < NUM_OF_COLUMNS; o++) {
-                        System.out.println("this is p: " + p + "\t this is o: " + o);
                         this.button[p][o].setNewTinySound(soundName + (p + 1) + ".wav");
                     }
                 }

@@ -1,6 +1,7 @@
 package soundloop.Models;
 
 import java.awt.Color;
+import java.io.File;
 import javax.swing.JButton;
 import kuusisto.tinysound.Sound;
 import kuusisto.tinysound.TinySound;
@@ -45,8 +46,8 @@ public class SoundButton extends JButton {
      * @param soundName The url of the sound file to be used
      */
     public void setTinySound(String soundName) {
-
-        Sound bs = TinySound.loadSound(soundName);
+File file = new File(System.getProperty("user.dir")+"\\src\\"+soundName);
+        Sound bs = TinySound.loadSound(file);
         this.buttonSound = bs;
     }
 
@@ -56,8 +57,9 @@ public class SoundButton extends JButton {
      * @param soundName The string that will turn into a location for a sound
      */
     public void setNewTinySound(String soundName) {
-        this.buttonSound = null;
-        Sound bs = TinySound.loadSound(soundName);
+        this.buttonSound = null;        
+        File file = new File(System.getProperty("user.dir")+"\\src\\"+soundName);
+        Sound bs = TinySound.loadSound(file);
         this.buttonSound = bs;
     }
 
